@@ -59,24 +59,7 @@ class CentralVideo{
             this._titulo = prompt("Ingrese el titulo de la pelicula que desea: ");
             this._clasificacion= prompt("Ingrese la clasificacion de la pelicula: ");
             this._estadoP=prompt( )
-            switch (parseInt(this._estadoP)) {
-                case 1:
-                    this._estadoP = 'Disponible'
-                    break
-                case 2:
-                    this._estadoP = 'Rentada'
-                    break
-            }
-            this._tipo = prompt("tipo de peli(3.Pelicua de estreno), (4. Pelicula de catalogo) ")
-            switch (parseInt(this._tipo)) {
-                case 3:
-                    this._tipo = 'Pelicua de estreno'
-                    break
-                case 2:
-                    this._tipo = 'Pelicula de Catalogo'
-                    break
-            } 
-
+            
             let pelicula={
                 id:this._id,
                 titulo:this._titulo,
@@ -97,9 +80,8 @@ class CentralVideo{
      }
  } eliminarPeli() {
     for (let i = 0; i < this._consultaPeli.length; i++) {
-        if (this._consultaPeli[i].dispo === 'Rentata') {
+        if (this._consultaPeli[i].dispo === 'Rentada') {
             this._consultaPeli.slice(i, 1);
-            // console.log(`La peli ${this._consultaPeli[i].titulo} se ha rentato`);
 
         } else {
             console.log(`La peli ${this._consultaP[i].titulo} aun sigue disponible `);
