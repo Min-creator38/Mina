@@ -1,13 +1,14 @@
 class Alumnos{
-    constructor( nombre){
-        this.nombre  =nombre;
+    constructor( nombre, matricula){
+        this.nombre = nombre;
+        this.matricula = matricula
         this.calificaciones = [];
     }
     AgregarCalific(calificacion) {
         this.calificaciones.push(calificacion)
     }
     mostrarCalifi() {
-        console.log(`Nombre del alumno: ${this.nombre}`);
+        console.log(`Nombre del alumno: ${this.nombre}, Matricula : ${this.matricula}`);
         this.calificaciones.forEach(calificacion => {
             calificacion.mostrarDetalles();
         });
@@ -68,9 +69,8 @@ Desarrollo = () => {
     const materia2 = new Materias("Física");
     const materia3 = new Materias("Programación");
 
-    const Dany = new Alumnos("Dany")
-    const Luis= new Alumnos("Luis")
-  
+    const Dany = new Alumnos("Dany", "23E20115")
+    const Luis= new Alumnos("Luis", "115E2023")
 
     Dany.AgregarCalific(new Calificacion(materia1, docente1, 90, 95));
     Dany.AgregarCalific(new Calificacion(materia2,docente2, 85, 75));
